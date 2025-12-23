@@ -1,0 +1,35 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Rafaworld Mod",
+		"description": "Custom items and features for Rafaworld",
+		"uuid": "b1f2c3d4-e5f6-7890-abcd-ef1234567890",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 40]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "c2d3e4f5-a6b7-8901-bcde-f12345678901",
+			"version": [1, 0, 0]
+		},
+		{
+			"type": "resources",
+			"uuid": "d3e4f5a6-b7c8-9012-cdef-123456789012",
+			"version": [1, 0, 0]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "e4f5a6b7-c8d9-0123-defa-234567890123",
+			"version": [1, 0, 0],
+			"entry": "scripts/main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.4.0"
+		}
+	]
+}

@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Build output
+output/
+
+# IDE
+.vscode/
+.idea/
+
+# Node modules (if using npm for tooling)
+node_modules/
+
+# Logs
+*.log
