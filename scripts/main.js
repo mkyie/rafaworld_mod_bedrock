@@ -22,9 +22,6 @@ system.beforeEvents.startup.subscribe((initEvent) => {
                 z: headLocation.z + viewDirection.z * spawnOffset
             };
 
-            // Fireball speed
-            const speed = 1.5;
-
             // Fire first fireball (slightly to the left)
             system.run(() => {
                 const fireball1 = player.dimension.spawnEntity("rafaworld_mod:dark_fireball", {
@@ -33,12 +30,11 @@ system.beforeEvents.startup.subscribe((initEvent) => {
                     z: spawnLocation.z + viewDirection.x * 0.3
                 });
 
-                fireball1.setRotation(player.getRotation());
-                fireball1.applyImpulse({
-                    x: viewDirection.x * speed,
-                    y: viewDirection.y * speed,
-                    z: viewDirection.z * speed
-                });
+                const projectile1 = fireball1.getComponent("minecraft:projectile");
+                if (projectile1) {
+                    projectile1.owner = player;
+                    projectile1.shoot(viewDirection, { uncertainty: 0 });
+                }
             });
 
             // Fire second fireball (slightly to the right)
@@ -49,12 +45,11 @@ system.beforeEvents.startup.subscribe((initEvent) => {
                     z: spawnLocation.z - viewDirection.x * 0.3
                 });
 
-                fireball2.setRotation(player.getRotation());
-                fireball2.applyImpulse({
-                    x: viewDirection.x * speed,
-                    y: viewDirection.y * speed,
-                    z: viewDirection.z * speed
-                });
+                const projectile2 = fireball2.getComponent("minecraft:projectile");
+                if (projectile2) {
+                    projectile2.owner = player;
+                    projectile2.shoot(viewDirection, { uncertainty: 0 });
+                }
             });
         }
     });

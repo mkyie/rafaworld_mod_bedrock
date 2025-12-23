@@ -5,7 +5,8 @@
 			"identifier": "rafaworld_mod:dark_fireball",
 			"is_spawnable": true,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"runtime_identifier": "minecraft:small_fireball"
 		},
 		"components": {
 			"minecraft:projectile": {
@@ -15,13 +16,13 @@
 						"knockback": true,
 						"semi_random_diff_damage": false
 					},
+					"catch_fire": {
+						"fire_affected_by_griefing": true
+					},
 					"definition_event": {
 						"event_trigger": {
 							"event": "rafaworld_mod:on_hit"
 						}
-					},
-					"catch_fire": {
-						"fire_affected_by_griefing": true
 					}
 				},
 				"power": 1.5,
@@ -32,15 +33,12 @@
 				"should_bounce": false,
 				"offset": [0, 0, 0],
 				"inertia": 1,
-				"liquid_inertia": 1
+				"liquid_inertia": 1,
+				"hit_sound": "bow.hit"
 			},
 			"minecraft:collision_box": {
-				"width": 0.5,
-				"height": 0.5
-			},
-			"minecraft:physics": {
-				"has_gravity": false,
-				"has_collision": true
+				"width": 0.31,
+				"height": 0.31
 			},
 			"minecraft:pushable": {
 				"is_pushable": false,
