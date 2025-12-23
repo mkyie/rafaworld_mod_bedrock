@@ -1,0 +1,77 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "rafaworld_mod:dark_fireball",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 8,
+						"knockback": true,
+						"semi_random_diff_damage": false
+					},
+					"definition_event": {
+						"event_trigger": {
+							"event": "rafaworld_mod:on_hit"
+						}
+					},
+					"catch_fire": {
+						"fire_affected_by_griefing": true
+					}
+				},
+				"power": 1.5,
+				"gravity": 0.0,
+				"uncertainty_base": 0,
+				"uncertainty_multiplier": 0,
+				"anchor": 1,
+				"should_bounce": false,
+				"offset": [0, 0, 0],
+				"inertia": 1,
+				"liquid_inertia": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:conditional_bandwidth_optimization": {}
+		},
+		"events": {
+			"rafaworld_mod:on_hit": {
+				"queue_command": {
+					"command": [
+						"particle minecraft:huge_explosion_emitter ~ ~ ~"
+					]
+				},
+				"add": {
+					"component_groups": ["rafaworld_mod:despawn"]
+				}
+			}
+		},
+		"component_groups": {
+			"rafaworld_mod:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		}
+	}
+}

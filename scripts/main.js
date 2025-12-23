@@ -27,7 +27,7 @@ system.beforeEvents.startup.subscribe((initEvent) => {
 
             // Fire first fireball (slightly to the left)
             system.run(() => {
-                const fireball1 = player.dimension.spawnEntity("minecraft:small_fireball", {
+                const fireball1 = player.dimension.spawnEntity("rafaworld_mod:dark_fireball", {
                     x: spawnLocation.x - viewDirection.z * 0.3,
                     y: spawnLocation.y,
                     z: spawnLocation.z + viewDirection.x * 0.3
@@ -43,7 +43,7 @@ system.beforeEvents.startup.subscribe((initEvent) => {
 
             // Fire second fireball (slightly to the right)
             system.run(() => {
-                const fireball2 = player.dimension.spawnEntity("minecraft:small_fireball", {
+                const fireball2 = player.dimension.spawnEntity("rafaworld_mod:dark_fireball", {
                     x: spawnLocation.x + viewDirection.z * 0.3,
                     y: spawnLocation.y,
                     z: spawnLocation.z - viewDirection.x * 0.3

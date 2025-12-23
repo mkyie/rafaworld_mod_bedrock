@@ -31,6 +31,7 @@ echo "Creating Behavior Pack..."
 # Copy behavior pack files
 cp -r "$SCRIPT_DIR/items" "$BP_DIR/" 2>/dev/null || true
 cp -r "$SCRIPT_DIR/scripts" "$BP_DIR/" 2>/dev/null || true
+cp -r "$SCRIPT_DIR/entities" "$BP_DIR/" 2>/dev/null || true
 
 # Create behavior pack manifest
 cat > "$BP_DIR/manifest.json" << EOF
@@ -79,6 +80,7 @@ cp -r "$SCRIPT_DIR/models" "$RP_DIR/" 2>/dev/null || true
 cp -r "$SCRIPT_DIR/attachables" "$RP_DIR/" 2>/dev/null || true
 cp -r "$SCRIPT_DIR/animations" "$RP_DIR/" 2>/dev/null || true
 cp -r "$SCRIPT_DIR/texts" "$RP_DIR/" 2>/dev/null || true
+cp -r "$SCRIPT_DIR/entity" "$RP_DIR/" 2>/dev/null || true
 
 # Create resource pack manifest
 cat > "$RP_DIR/manifest.json" << EOF
