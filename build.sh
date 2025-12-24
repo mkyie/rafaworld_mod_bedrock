@@ -17,7 +17,21 @@ BP_SCRIPT_UUID="e4f5a6b7-c8d9-0123-defa-234567890123"
 RP_UUID="d3e4f5a6-b7c8-9012-cdef-123456789012"
 RP_MODULE_UUID="f5a6b7c8-d9e0-1234-efab-345678901234"
 
+# Read version from .version file
+VERSION_FILE="$SCRIPT_DIR/.version"
+if [ -f "$VERSION_FILE" ]; then
+    VERSION=$(cat "$VERSION_FILE" | tr -d '[:space:]')
+else
+    echo "Warning: .version file not found, using default 1.0.0"
+    VERSION="1.0.0"
+fi
+
+# Parse version into array format [major, minor, patch]
+IFS='.' read -r VERSION_MAJOR VERSION_MINOR VERSION_PATCH <<< "$VERSION"
+VERSION_ARRAY="$VERSION_MAJOR, $VERSION_MINOR, $VERSION_PATCH"
+
 echo "Building Rafaworld Mod..."
+echo "Version: $VERSION"
 echo "========================="
 
 # Clean and create output directories
@@ -41,7 +55,7 @@ cat > "$BP_DIR/manifest.json" << EOF
 		"name": "Rafaworld Mod",
 		"description": "Custom items and features for Rafaworld",
 		"uuid": "$BP_UUID",
-		"version": [1, 0, 1],
+		"version": [$VERSION_ARRAY],
 		"min_engine_version": [1, 21, 40]
 	},
 	"modules": [
@@ -65,7 +79,7 @@ cat > "$BP_DIR/manifest.json" << EOF
 		},
 		{
 			"uuid": "$RP_UUID",
-			"version": [1, 0, 0]
+			"version": [$VERSION_ARRAY]
 		}
 	]
 }
@@ -90,7 +104,7 @@ cat > "$RP_DIR/manifest.json" << EOF
 		"name": "Rafaworld Mod Resources",
 		"description": "Resources for Rafaworld Mod",
 		"uuid": "$RP_UUID",
-		"version": [1, 0, 1],
+		"version": [$VERSION_ARRAY],
 		"min_engine_version": [1, 21, 40]
 	},
 	"modules": [
