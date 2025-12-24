@@ -1,1 +1,5 @@
 item.rafaworld_mod:dark_sword=Dark Sword
+item.rafaworld_mod:rafa_sword=Daddy Slayer
+item.rafaworld_mod:bas_sword=Bas Sword
+entity.rafaworld_mod:rafa_dragon.name=Rafa dragon
+item.spawn_egg.entity.rafaworld_mod:rafa_dragon.name=Spawn Rafa dragon

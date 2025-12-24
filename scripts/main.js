@@ -1,6 +1,31 @@
 import { world, system } from "@minecraft/server";
 
 system.beforeEvents.startup.subscribe((initEvent) => {
+    // Rafa Sword - burns holders who are not RafaSy
+    initEvent.itemComponentRegistry.registerCustomComponent("rafaworld_mod:rafa_sword", {
+        onUse(event) {
+            const player = event.source;
+            if (player.name !== "rafasyie") {
+                system.run(() => {
+                    player.setOnFire(3, true);
+                });
+            }
+        }
+    });
+
+    // Bas Sword - burns holders who are not bassysy
+    initEvent.itemComponentRegistry.registerCustomComponent("rafaworld_mod:bas_sword", {
+        onUse(event) {
+            const player = event.source;
+            if (player.name !== "bassysy") {
+                system.run(() => {
+                    player.setOnFire(3, true);
+                });
+            }
+        }
+    });
+
+    // Dark Sword - fireballs and fire damage
     initEvent.itemComponentRegistry.registerCustomComponent("rafaworld_mod:dark_sword", {
         onHitEntity(event) {
             const hitEntity = event.hitEntity;

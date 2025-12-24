@@ -41,7 +41,7 @@ cat > "$BP_DIR/manifest.json" << EOF
 		"name": "Rafaworld Mod",
 		"description": "Custom items and features for Rafaworld",
 		"uuid": "$BP_UUID",
-		"version": [1, 0, 0],
+		"version": [1, 0, 1],
 		"min_engine_version": [1, 21, 40]
 	},
 	"modules": [
@@ -90,7 +90,7 @@ cat > "$RP_DIR/manifest.json" << EOF
 		"name": "Rafaworld Mod Resources",
 		"description": "Resources for Rafaworld Mod",
 		"uuid": "$RP_UUID",
-		"version": [1, 0, 0],
+		"version": [1, 0, 1],
 		"min_engine_version": [1, 21, 40]
 	},
 	"modules": [

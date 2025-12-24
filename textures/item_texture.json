@@ -1,7 +1,14 @@
 {
+	"resource_pack_name": "rafaworld_mod",
 	"texture_data": {
 		"dark_sword": {
 			"textures": "textures/items/dark_sword.png"
+		},
+		"rafa_sword": {
+			"textures": "textures/items/rafa_sword.png"
+		},
+		"bas_sword": {
+			"textures": "textures/items/bas_sword.png"
 		}
 	}
 }
